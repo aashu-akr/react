@@ -1,5 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React  from "react";
+import  ReactDOM  from "react-dom";
+
 
 //React element
 const title1 =(
@@ -28,9 +29,6 @@ const Heading = () => (
     </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Heading/>);
 
 /**
  * suppose we are fetching data from an API and it turned out to be a bad API
@@ -56,3 +54,25 @@ root.render(<Heading/>);
         <Title/> - to call a react component
         <Title></Title> - to call a react component
  */
+
+//using createElement method
+const heading = React.createElement(
+    "h1",
+    {id : "heading1"},
+    React.createElement(
+        "h2",
+        {id :"heading2"},
+        React.createElement(
+            "h3",
+            {id : "heading3"},
+            "this is heading 3"
+        )
+    )
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+
+//==================================================================
+//using JSX
+
