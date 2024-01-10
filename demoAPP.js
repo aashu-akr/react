@@ -29,9 +29,6 @@ const Heading = () => (
     </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Heading/>);
 
 /**
  * suppose we are fetching data from an API and it turned out to be a bad API
@@ -78,3 +75,4 @@ root.render(heading);
 
 //==================================================================
 //using JSX
+
