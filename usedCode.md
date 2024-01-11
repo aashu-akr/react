@@ -84,3 +84,21 @@ root.render(<Heading />);
  *
  *
  * */
+
+==========================================================
+Eipsode 4:
+
+Hard coding the values :
+
+const ResturantCard = () =>{
+    return (
+        <div className="res-card">
+            <img className = "res-logo" alt = "res-logo" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcCU2eMgh5ybB55I_hLeYiNQ8yuC9_lbSGdH3jtCCPg9S4nIJJZOFTn-2CfXIc3f8Big&usqp=CAU" />
+            <h3 className="res-name1">Meghna Foods</h3>
+            <h4 className="cuisine">Biryani, North India, Thai</h4>
+            <h4 className="rating">4.4 ⭐</h4>
+            <h4 className="del-time"> ETA : 40 - 45 mins</h4>
+
+        </div>
+    )
+}

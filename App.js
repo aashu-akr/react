@@ -1,58 +1,91 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//React element
-const title1 =(
-    <div id = "container">
-        <h1 className="head"> Hello from React Element: Title1🚀</h1>
-    </div>
-);
+/**
+ * Header
+ *  Logo
+ *  Nav Items
+ * 
+ * Body
+ *  Search
+ *  Resturant Container
+ *      Resturant Card
+ *          Img
+ *          Name of res
+ *          Star rating,cuisines,delivery time
+ *          
+ * Footer
+ *  Copyright
+ *  Links
+ *  Address
+ *  Contact
+ */
 
-//React component
-const Title = ()=>(
-    <div id = "container">
-        <h1 className="head"> Hello from React Functional Component: Title🚀</h1>
-    </div>
-);
-const number = 20000;
+const Header = () =>{
+    return (
+        <div className = "header">
+            <div className = "logo-container">
+                <img className = "logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li className="home">Home </li>
+                    <li className="about-us">About Us </li>
+                    <li className="contact-us">Contact Us </li>
+                    <li className="cart"> 🛒 </li>
+                </ul>
+            </div>
+        </div>
+    )
+};
 
-//we are injecting any JS code inside JSX using {}, the code will come inside the JSX
-const Heading = () => (
-    <div id = "container">
-        {200+300}
-        <h1 className="head"> Hello from React Functional Component: Heading🚀</h1>
-        {Title()} 
-        {title1} 
-        <Title/>
-        <Title></Title>
-    </div>
-);
+const ResturantCard = (props) =>{
+    console.log(props);
+    return (
+        <div className="res-card">
+            <img className = "res-logo" alt = "res-logo" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcCU2eMgh5ybB55I_hLeYiNQ8yuC9_lbSGdH3jtCCPg9S4nIJJZOFTn-2CfXIc3f8Big&usqp=CAU" />
+            <h3 className="res-name1">{props.resName}</h3>
+            <h4 className="cuisine">{props.cusine}</h4>
+            <h4 className="rating">{props.rating}</h4>
+            <h4 className="del-time">{props.delTime}</h4>
+
+        </div>
+    )
+}
+
+const Body =() =>{
+    return(
+        <div className="body">
+            {/* <button className="search-button">Search</button> */}
+            <div className="search">Search</div>
+            <div className="res-container">
+                <ResturantCard
+                resName = "Meghna Foods"
+                cusine = "Biryani, North India, Thai"
+                rating = "4.4 ⭐"  
+                delTime = "30-35 mins"
+                />  
+                <ResturantCard
+                resName = "KFC"
+                cusine = "Burger, Fries, Tacos"
+                rating = "4.6 ⭐"  
+                delTime = "20-25 mins"
+                />         
+            </div>  
+        </div>
+    )
+};
+
+const AppLayout =()=>{
+    return (
+        <div className = "app">
+            {/* //Header */}
+            {Header()}
+            <Body/>
+        </div>
+    )
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Heading/>);
-
-/**
- * suppose we are fetching data from an API and it turned out to be a bad API
- * then it may result in a situation where an attacker might inject some bad JS code
- * and try to run it on the browser. It can lead to "cross-site script attack"
- * To avoid this, if any malicious data is passed, then JSX will check and then run it,
- * JSX will sanitize the data and then run automatically  
- * 
- * to render a React component:
- * <Title/>
- * instead: we can also write as <Title></Title>
- * <Title/> = <Title></Title>
- * 
- * google this : cross-site script attack
- * 
- * what is Heading(which is a functional component) at EOD?
- * 
- * if our code is fast and readable, then React is not making our code fast, JSX 
- * is helping out to make our code fast and readble with help of Bable and ofcourse, Parcel 
- * 
- *      {Title()} - to call a react component
-        {title1} - to call a react Element
-        <Title/> - to call a react component
-        <Title></Title> - to call a react component
- */
+root.render(<AppLayout/>);
