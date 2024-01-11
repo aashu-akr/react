@@ -28,9 +28,6 @@ const Heading = () => (
     </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Heading/>);
 
 /**
  * suppose we are fetching data from an API and it turned out to be a bad API
@@ -56,3 +53,28 @@ root.render(<Heading/>);
         <Title/> - to call a react component
         <Title></Title> - to call a react component
  */
+<<<<<<< HEAD
+=======
+
+//using createElement method
+const heading = React.createElement(
+    "h1",
+    {id : "heading1"},
+    React.createElement(
+        "h2",
+        {id :"heading2"},
+        React.createElement(
+            "h3",
+            {id : "heading3"},
+            "this is heading 3"
+        )
+    )
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+
+//==================================================================
+//using JSX
+
+>>>>>>> 14caad7794491a3cffa63d0c58a88581866162b3
