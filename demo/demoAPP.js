@@ -53,8 +53,7 @@ const Heading = () => (
         <Title/> - to call a react component
         <Title></Title> - to call a react component
  */
-<<<<<<< HEAD
-=======
+
 
 //using createElement method
 const heading = React.createElement(
@@ -76,5 +75,3 @@ root.render(heading);
 
 //==================================================================
 //using JSX
-
->>>>>>> 14caad7794491a3cffa63d0c58a88581866162b3
