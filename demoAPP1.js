@@ -76,3 +76,22 @@ root.render(heading);
 //==================================================================
 //using JSX
 
+// React Element without using JSX- its is javascript object at eod
+// react.create() - creates a react element => javascript object => when rendered, becomes a HTML element
+const title = React.createElement(
+    "h1",
+    {id : 1,
+        name : "aashu"
+    },
+    "this is hello from aashu"
+);
+
+// React Component - its a 
+
+const Hello = (
+    <h1 className="hello "> this is a react component </h1>
+);
+
+const title2 =()=>{
+    <h1 className="title2"> writing react element without using "react.createElement()"</h1>
+};

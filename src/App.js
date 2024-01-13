@@ -68,7 +68,7 @@ const ResturantCard = (props) => {
       />
       <h3 className="res-name1">{name}</h3>
       <h4 className="cuisine">{cuisines.join(", ")}</h4>
-      <h4 className="costForTwo">{costForTwo} for Two</h4>
+      <h4 className="costForTwo">{costForTwo}</h4>
       <h4 className="rating">{avgRating} ⭐</h4>
       <h4 className="del-time">{sla.slaString}</h4>
     </div>
@@ -886,6 +886,7 @@ const resList = [
   "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
 }
 ]
+
 const Body = () => {
   return (
     <div className="body">
