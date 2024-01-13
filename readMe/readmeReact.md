@@ -22,3 +22,23 @@ if i want to give class name in JSX:
 <h1 class = "head">Namaste React🚀 using JSX</h1>
 
 */
+
+/**
+ * Header
+ *  Logo
+ *  Nav Items
+ *
+ * Body
+ *  Search
+ *  Resturant Container
+ *      Resturant Card
+ *          Img
+ *          Name of res
+ *          Star rating,cuisines,delivery time
+ *
+ * Footer
+ *  Copyright
+ *  Links
+ *  Address
+ *  Contact
+ */

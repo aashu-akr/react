@@ -1,10 +1,12 @@
+import { LOGO_URL } from "../utils/constants";
+
 const Header = () => {
     return (
       <div className="header">
         <div className="logo-container">
           <img
             className="logo"
-            src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+            src= {LOGO_URL}
           />
         </div>
         <div className="nav-items">
@@ -18,3 +20,8 @@ const Header = () => {
       </div>
     );
   };
+
+export default Header;
+
+// this is the default method to export our file
+// always export first then import the file
