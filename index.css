@@ -4,7 +4,6 @@
     border: 1px solid black;
 }
 
-/* for the logo */
 .logo {
     width : 200px;
 }
@@ -42,6 +41,11 @@
     border-radius: 2px black;
 }
 
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
+}
+
 /* ====================BODY============================== */
 .res-card{
     width:200px;
@@ -52,6 +56,7 @@
     margin: 30px;
     border-radius: 3px;
 }
+
 .res-container{
     display:flex ;
     flex-wrap: wrap;  
@@ -98,4 +103,5 @@
     font-weight: lighter;
     font-size: 15px;  
 }
+
 

@@ -164,3 +164,9 @@ to fix this, there is a key in the react component
    why we need keys in Map?
 
 ------------------------------------------------------------------------------------------------
+Episode 5: 
+
+  //normal JS Variable:
+  let listOfResturant1 = [];
+  //State Variable:
+  let [listOfResturant1] = useSate([]);
