@@ -40,6 +40,7 @@ root.render(jsxHeading);
 
 //React element
 const heading = (
+
 <h1 className="head">
 Namaste React🚀using JSX
 </h1>
@@ -47,6 +48,7 @@ Namaste React🚀using JSX
 //React functional Component:
 
 const Title = () => (
+
 <div id = "container">
 <h1 className="head"> Hello from React Functional Component: Title🚀</h1>
 </div>
@@ -54,6 +56,7 @@ const Title = () => (
 
 // if i want to render Title component in Heading component, then i will do this and the code of Title will come here in the backend and understood by Babel
 const Heading = () => (
+
 <div id = "container">
 <Title/>  
  <h1 className="head"> Hello from React Functional Component: Heading🚀</h1>
@@ -95,6 +98,7 @@ Hard coding the values :
 
 const ResturantCard = () =>{
 return (
+
 <div className="res-card">
 <img className = "res-logo" alt = "res-logo" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcCU2eMgh5ybB55I_hLeYiNQ8yuC9_lbSGdH3jtCCPg9S4nIJJZOFTn-2CfXIc3f8Big&usqp=CAU" />
 <h3 className="res-name1">Meghna Foods</h3>
@@ -105,8 +109,8 @@ return (
         </div>
     )
 
-}
-------------------------------------------------------------------------------------------------
+## }
+
 <h3 className="res-name1">{resData.info.name}</h3>
       <h4 className="cuisine">{resData.info.cuisines.join(", ")}</h4>
       <h4 className="costForTwo">{resData.info.costForTwo} for Two</h4>
@@ -123,30 +127,34 @@ costForTwo,
 avgRating,
 slaString,
 } = resData?.data;
+
 <!-- the above is called destructuring our data -->
+
     <h3 className="res-name1">{name}</h3>
     <h4 className="cuisine">{cuisines.join(", ")}</h4>
     <h4 className="costForTwo">{costForTwo} for Two</h4>
     <h4 className="rating">{avgRating} ⭐</h4>
     <h4 className="del-time">{sla.slaString}</h4>
 
-------------------------------------------------------------------------------------------------
-        {/* <ResturantCard resData = {resList[0]}/> 
-        <ResturantCard resData = {resList[1]}/> 
-        <ResturantCard resData = {resList[2]}/> 
-        <ResturantCard resData = {resList[3]}/> 
-        <ResturantCard resData = {resList[4]}/> 
-        <ResturantCard resData = {resList[5]}/> 
-        <ResturantCard resData = {resList[6]}/> 
+---
+
+        {/* <ResturantCard resData = {resList[0]}/>
+        <ResturantCard resData = {resList[1]}/>
+        <ResturantCard resData = {resList[2]}/>
+        <ResturantCard resData = {resList[3]}/>
+        <ResturantCard resData = {resList[4]}/>
+        <ResturantCard resData = {resList[5]}/>
+        <ResturantCard resData = {resList[6]}/>
         <ResturantCard resData = {resList[7]}/>  */}
 
-        is equivalent to 
+        is equivalent to
 
         {
             resList.map(resturant => <ResturantCard resData = {resturant}/>)
         }
 
-------------------------------------------------------------------------------------------------
+---
+
 warning:
 
 App.js:894 Warning: Each child in a list should have a unique "key" prop.
@@ -155,18 +163,27 @@ to fix this, there is a key in the react component
 
     <ResturantCard key = {resturant.info.id} resData = {resturant}/>)
 
-=> e have addded this : key = {resturant.info.id} 
+=> e have addded this : key = {resturant.info.id}
 
-   => Unique Key property: It means each of the item in resList has to be uniquley represented.
-   so always add key to MAP 0
-   
+=> Unique Key property: It means each of the item in resList has to be uniquley represented.
+so always add key to MAP 0
 
-   why we need keys in Map?
+why we need keys in Map?
 
-------------------------------------------------------------------------------------------------
-Episode 5: 
+---
 
-  //normal JS Variable:
-  let listOfResturant1 = [];
-  //State Variable:
-  let [listOfResturant1] = useSate([]);
+Episode 5:
+
+//normal JS Variable:
+let listOfResturant1 = [];
+//State Variable:
+let [listOfResturant1] = useSate([]);
+
+      `Array Destructuring`:
+      const arr = useState(resList);
+
+      [listOfResturant, setListOfResturant] = arr;
+
+      This above is the same thing as below:
+
+       [listOfResturant, setListOfResturant] = useState(resList);
