@@ -123,3 +123,7 @@
     border-radius: 3px;
 
 }
+
+.filter{
+    display: flex;
+}
