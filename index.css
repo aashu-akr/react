@@ -30,10 +30,12 @@
     cursor: pointer;
     border-radius: 2px black;
 }
-.about-us:hover{
+.about-us{
     border: 1px solid black;
     cursor: pointer;
     border-radius: 2px black;
+    padding: 0 20px;
+    cursor: pointer;
 }
 .contact-us:hover{
     border: 1px solid black;

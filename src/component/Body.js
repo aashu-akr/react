@@ -26,7 +26,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  console.log("body rendered");
+  // console.log("body rendered");
 
   /*  
 		setListOfResturant <- state variable in react
@@ -50,7 +50,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.627981&lng=77.3648567&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.627981&lng=77.3648567&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     ).catch((err) => {
       console.log(err.response.data);
     });
@@ -94,7 +94,8 @@ if(listOfResturant.length === 0){	//adding loading screen
               //filter the list and update the UI
               console.log(searchText);
               const filteredRestaurant = listOfResturant.filter(
-                (res) => res.info.name.toLowerCase().includes(searchText) //when we search for any string, it will include this string and finds out the matching result
+                (res) =>
+                  res.info.name.toLowerCase().includes(searchText.toLowerCase()) //when we search for any string, it will include this string and finds out the matching result
               );
               setFilteredListOfRestaurant(filteredRestaurant);
             }}
@@ -106,9 +107,10 @@ if(listOfResturant.length === 0){	//adding loading screen
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfResturant.filter(
-              (res) => res.info.avgRating >= 4.2
+              (res) => res.info.avgRating > 4
             );
-            setListOfResturant(filteredListOfRestaurant);
+            setListOfResturant(filteredList);
+            console.log("yes");
           }}
         >
           Top Rated Resturants

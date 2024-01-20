@@ -3,18 +3,30 @@ import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState(["Login"]);
+  const [btnAboutUs, setBtnAboutUs] = useState(["About Us"]);
 
   return (
     <div className="header">
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} />
       </div>
+
       <div className="nav-items">
         <ul>
           <li className="home">Home </li>
-          <li className="about-us">About Us </li>
-          <li className="contact-us">Contact Us </li>
+          <button
+            className="about-us"
+            onClick={() => {
+              btnAboutUs === "About Us"
+                ? setBtnAboutUs("Helping to serve food")
+                : setBtnAboutUs("About Us");
+            }}
+          >
+            {btnAboutUs}
+          </button>
+          <li className="contact-us">Contact Us</li>
           <li className="cart"> 🛒 </li>
+
           <button
             className="login"
             onClick={() => {
