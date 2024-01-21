@@ -47,10 +47,7 @@
     cursor: pointer;
 }
 
-.filter-btn{
-    margin: 10px;
-    cursor: pointer;
-}
+
 
 /* ====================BODY============================== */
 .res-card{
@@ -75,7 +72,14 @@
 }
 
 .search{
-    margin: 10px;
+    padding: 10px;
+}
+.search-button{
+    margin: 5px;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border-width: 1px;
 }
 
 .res-logo{
@@ -128,4 +132,16 @@
 
 .filter{
     display: flex;
+    padding: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
+}
+.filter-btn{
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border : solid black;
+    border-radius:  4px;
+    border-width: 1px;
 }

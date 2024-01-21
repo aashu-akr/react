@@ -90,6 +90,7 @@ if(listOfResturant.length === 0){	//adding loading screen
             }}
           />
           <button
+            className="search-button"
             onClick={() => {
               //filter the list and update the UI
               console.log(searchText);
@@ -107,7 +108,7 @@ if(listOfResturant.length === 0){	//adding loading screen
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfResturant.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.sla.deliveryTime > 35
             );
             setListOfResturant(filteredList);
             console.log("yes");
