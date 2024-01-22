@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState(["Login"]);
 
   useEffect(() => {
-    console.log("use effect called");
+    // console.log("use effect called");
   }, []);
 
   return (
@@ -17,7 +18,7 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li className="home">
-            <Link to="/"></Link>Home{" "}
+            <Link to="/">Home</Link>
           </li>
           <li className="about-us">
             <Link to="/about">About Us</Link>
@@ -25,7 +26,9 @@ const Header = () => {
           <li className="contact-us">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="cart"> 🛒 </li>
+          <li className="cart">
+            <Link to="/🛒"> 🛒</Link>
+          </li>
 
           <button
             className="login"
