@@ -31,9 +31,9 @@
     border-radius: 2px black;
 }
 .about-us{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     cursor: pointer;
-    border-radius: 2px black;
+    /* border-radius: 2px black; */
     padding: 0 20px;
     cursor: pointer;
 }
