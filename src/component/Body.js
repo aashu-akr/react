@@ -1,7 +1,8 @@
-import ResturantCard from "./ResturantCard"; //normal import
+import RestaurantCard from "./RestaurantCard"; //normal import
 import resList from "../utils/mockData"; //normal import
 import { useEffect, useState } from "react"; //named import
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 /*
  * State Variable - React powered element
@@ -20,7 +21,7 @@ import Shimmer from "./Shimmer";
  */
 
 const Body = () => {
-  const [listOfResturant, setListOfResturant] = useState([]);
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
   const [filteredListOfRestaurant, setFilteredListOfRestaurant] = useState([]);
 
@@ -56,9 +57,9 @@ const Body = () => {
     });
 
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
 
-    setListOfResturant(
+    setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredListOfRestaurant(
@@ -75,7 +76,7 @@ if(listOfResturant.length === 0){	//adding loading screen
 }
 */
 
-  return listOfResturant.length === 0 ? (
+  return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -94,7 +95,7 @@ if(listOfResturant.length === 0){	//adding loading screen
             onClick={() => {
               //filter the list and update the UI
               console.log(searchText);
-              const filteredRestaurant = listOfResturant.filter(
+              const filteredRestaurant = listOfRestaurant.filter(
                 (res) =>
                   res.info.name.toLowerCase().includes(searchText.toLowerCase()) //when we search for any string, it will include this string and finds out the matching result
               );
@@ -107,10 +108,10 @@ if(listOfResturant.length === 0){	//adding loading screen
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfResturant.filter(
+            const filteredList = listOfRestaurant.filter(
               (res) => res.info.sla.deliveryTime > 35
             );
-            setListOfResturant(filteredList);
+            setListOfRestaurant(filteredList);
             console.log("yes");
           }}
         >
@@ -118,8 +119,14 @@ if(listOfResturant.length === 0){	//adding loading screen
         </button>
       </div>
       <div className="res-container">
-        {filteredListOfRestaurant.map((resturant) => (
-          <ResturantCard key={resturant.info.id} resData={resturant} />
+        {filteredListOfRestaurant.map((restaurant) => (
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
+          //key should be on parent JSX which is maped
         ))}
       </div>
     </div>
