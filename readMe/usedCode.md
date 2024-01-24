@@ -194,24 +194,61 @@ Episode 6:
 //we have used the below code to fetch data from swiggy api and store in promise(a javascript function)
 
 const fetchData = async () =>{
-	const data = await fetch(
-		"https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.627981&lng=77.3648567&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-	);
+const data = await fetch(
+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.627981&lng=77.3648567&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+);
 
-	const json = await data.json();
+    const json = await data.json();
 
-	console.log(json);
+    console.log(json);
+
 }
-
 
 //used this to change the state of setListOfResturant - here we are also reading the json data using optional chaining
 setListOfResturant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
 //to show a spinner while page is loading:
 if(listOfResturant.length === 0){
-	return(
-		<h1>Loading.....</h1>
-	)
+return(
+<h1>Loading.....</h1>
+)
 }
 
 //shimmer UI
+
+=========================================================
+// console.log("body rendered");
+
+/\*  
+ setListOfResturant <- state variable in react
+`Array Destructuring`:
+const arr = useState(resList);
+
+      [listOfResturant, setListOfResturant] = arr;
+
+      const listOfResturant = arr[0];
+      const setListOfResturant = arr[1];
+
+      This above is the same thing as below:
+
+       [listOfResturant, setListOfResturant] = useState(resList);
+
+\*/
+
+// syntax = useEffect(setup, dependencies?)
+
+/\*
+
+- State Variable - React powered element
+- maintains the state of the component
+- local state variable: local scope
+-
+- const [listOfResturant] = useState(); - State Variable
+- let listOfResturant; - Normal Variable
+- [listOfResturant] - state value by react
+-
+- const [listOfResturant] = useState(); - State Variable
+- industry convention : we apply set before the name of the the list
+- ex: listOfResturant -> setlistOfResturant, res -> setRes
+- useState() returns the state of the variable and its is received in an Array
+- \*/

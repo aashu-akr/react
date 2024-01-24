@@ -4,22 +4,6 @@ import { useEffect, useState } from "react"; //named import
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
-/*
- * State Variable - React powered element
- * maintains the state of the component
- * local state variable: local scope
- *
- * const [listOfResturant] = useState(); - State Variable
- * let listOfResturant; - Normal Variable
- * [listOfResturant] - state value by react
- *
- * const [listOfResturant] = useState(); - State Variable
- * industry convention : we apply set before the name of the the list
- * ex: listOfResturant -> setlistOfResturant, res -> setRes
- * useState() returns the state of the variable and its is received in an Array
- *
- */
-
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
@@ -27,24 +11,6 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  // console.log("body rendered");
-
-  /*  
-		setListOfResturant <- state variable in react
-      `Array Destructuring`:
-      const arr = useState(resList);
-
-      [listOfResturant, setListOfResturant] = arr;
-
-      const listOfResturant = arr[0];
-      const setListOfResturant = arr[1];
-
-      This above is the same thing as below:
-
-       [listOfResturant, setListOfResturant] = useState(resList);
-  */
-
-  // syntax = useEffect(setup, dependencies?)
   useEffect(() => {
     fetchData();
   }, []);
