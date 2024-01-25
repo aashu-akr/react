@@ -34,12 +34,12 @@ const Body = () => {
   };
 
   /*
-the below is the example of conditional rendering:
-if(listOfResturant.length === 0){	//adding loading screen
-	return(
-		<Shimmer/>
-	)
-}
+  the below is the example of conditional rendering:
+  if(listOfResturant.length === 0){	//adding loading screen
+    return(
+      <Shimmer/>
+      )
+    }
 */
 
   return listOfRestaurant.length === 0 ? (
