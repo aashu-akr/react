@@ -7,18 +7,32 @@ class UserClass extends React.Component {
 
     this.state = {
       count: 0,
+      userInfo: {
+        name: "Dummy",
+        location: "Default",
+        company: "Default",
+      },
     };
-    console.log(this.props.name + "children component");
+    // console.log(this.props.name + "children component");
   }
 
-  componentDidMount() {
-    console.log(this.props.name + "children mounted");
+  async componentDidMount() {
+    // console.log(this.props.name + "children mounted");
+    const data = await fetch("https://api.github.com/users/aashu-akr");
+
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
   }
 
   render() {
-    console.log(this.props.name + "children rendered");
+    // console.log(this.props.name + "children rendered");
 
-    const { name, location, contact } = this.props;
+    const { name, location, company, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
         <h2>Count : {this.state.count}</h2>
@@ -49,9 +63,10 @@ class UserClass extends React.Component {
         >
           Reset
         </button>
+        <img src={avatar_url}></img>
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
-        <h4>Contact: {contact}</h4>
+        <h4>Company: {company}</h4>
       </div>
     );
   }

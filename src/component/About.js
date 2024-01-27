@@ -6,14 +6,14 @@ class About extends Component {
   constructor(props) {
     super(props);
 
-    console.log("parent component");
+    // console.log("parent component");
   }
 
   componentDidMount() {
-    console.log("parent mounted");
+    // console.log("parent mounted");
   }
   render() {
-    console.log("parent rendered");
+    // console.log("parent rendered");
 
     return (
       <div>
@@ -22,11 +22,6 @@ class About extends Component {
           name={"ashu (using class)"}
           location={"Noida "}
           contact={"aashu-akr "}
-        />
-        <UserClass
-          name={"elon musk (using class)"}
-          location={"usa "}
-          contact={"@elonMusk "}
         />
       </div>
     );
