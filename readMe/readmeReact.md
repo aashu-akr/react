@@ -1,12 +1,12 @@
-/* "react" <- this is inside the node_module and being imported in to code
+/_ "react" <- this is inside the node_module and being imported in to code
 browser scripts cannot be imports or exports and as browser understand normal javascript script and javascript does not have any import/export
-*/
+_/
 
-/*
+/\*
 React.createElement("h1", {id:"heading"}, "Namaste React🚀");
 //this is done using Core React
 //this is not developer friendly
-is equivalent to 
+is equivalent to
 
 <h1 id = "heading1">Namaste React🚀 using JSX</h1>
 //this is done using JSX
@@ -15,32 +15,43 @@ is equivalent to
 
 How HTML is different from JSX?
 
-if i want to give class name in HTML: 
+if i want to give class name in HTML:
+
 <div class = "head"> hello </div>
 
 if i want to give class name in JSX:
+
 <h1 class = "head">Namaste React🚀 using JSX</h1>
 
-*/
+\*/
 
-/**
- * Header
- *  Logo
- *  Nav Items
- *
- * Body
- *  Search
- *  Resturant Container
- *      Resturant Card
- *          Img
- *          Name of res
- *          Star rating,cuisines,delivery time
- *
- * Footer
- *  Copyright
- *  Links
- *  Address
- *  Contact
- */
+/\*\*
 
- 
+- Header
+- Logo
+- Nav Items
+-
+- Body
+- Search
+- Resturant Container
+-      Resturant Card
+-          Img
+-          Name of res
+-          Star rating,cuisines,delivery time
+-
+- Footer
+- Copyright
+- Links
+- Address
+- Contact
+  \*/
+
+========================================
+/_
+the below is the example of conditional rendering:
+if(listOfResturant.length === 0){ //adding loading screen
+return(
+<Shimmer/>
+)
+}
+_/

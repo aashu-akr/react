@@ -1,8 +1,9 @@
-import RestaurantCard from "./RestaurantCard"; //normal import
-import resList from "../utils/mockData"; //normal import
-import { useEffect, useState } from "react"; //named import
+import RestaurantCard from "./RestaurantCard";
+import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+
+import { useOnlineStatus } from "./useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -33,14 +34,10 @@ const Body = () => {
     );
   };
 
-  /*
-  the below is the example of conditional rendering:
-  if(listOfResturant.length === 0){	//adding loading screen
-    return(
-      <Shimmer/>
-      )
-    }
-*/
+  const checkOnlineStatus = useOnlineStatus();
+
+  if (checkOnlineStatus === false)
+    return <h1>looks like you are offline!!! please check your internet</h1>;
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
