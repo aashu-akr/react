@@ -42,11 +42,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
+      <div className="flex m-5 p-5">
         <div className="search">
           <input
             type="text"
-            className="search-box"
+            className=""
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
