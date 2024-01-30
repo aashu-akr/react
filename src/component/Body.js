@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { isOpenLable } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Body = () => {
   const [filteredListOfRestaurant, setFilteredListOfRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardIsOpen = isOpenLable(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -23,7 +25,7 @@ const Body = () => {
     });
 
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
 
     setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -31,8 +33,6 @@ const Body = () => {
     setFilteredListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-
-    console.log(listOfRestaurant);
   };
 
   const checkOnlineStatus = useOnlineStatus();
@@ -90,7 +90,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestaurantCardIsOpen resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
           //key should be on parent JSX which is maped
         ))}
