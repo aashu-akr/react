@@ -25,7 +25,7 @@ const Body = () => {
     });
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
 
     setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -77,7 +77,7 @@ const Body = () => {
                 (res) => res.info.sla.deliveryTime > 35
               );
               setListOfRestaurant(filteredList);
-              console.log("yes");
+              // console.log("yes");
             }}
           >
             Top Rated Resturants
