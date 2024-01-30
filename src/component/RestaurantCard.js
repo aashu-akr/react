@@ -8,14 +8,14 @@ const RestaurantCard = (props) => {
   //this is called optional chaining
 
   return (
-    <div className="res-card">
+    <div className="res-card m-4 p-4 w-[250px] rounded-lg ">
       <img
-        className="res-logo"
+        className="res-logo rounded-lg "
         // this {"logo" + "food"} is javascript as we cannot add two strings simply
         alt="logo - food"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3 className="res-name1">{name}</h3>
+      <h3 className="res-name1 font-bold mt-2 py- 4 ">{name}</h3>
       <h4 className="cuisine">{cuisines.join(", ")}</h4>
       <h4 className="costForTwo">{costForTwo}</h4>
       <h4 className="rating">{avgRating} ⭐</h4>
