@@ -1,8 +1,9 @@
 import RestaurantCard, { isOpenLable } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -37,6 +38,8 @@ const Body = () => {
 
   const checkOnlineStatus = useOnlineStatus();
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   if (checkOnlineStatus === false)
     return <h1>looks like you are offline!!! please check your internet</h1>;
 
@@ -45,7 +48,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="flex mt-5 mb-5">
-        <div className="search mt-2">
+        <div className="search mt-7">
           <input
             type="text"
             className=" ml-4 border border-solid border-black"
@@ -69,18 +72,28 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="">
+        <div className="search flex items-center">
           <button
-            className=" p-1 mt-2 bg-green-100 border border-solid border-green-500"
+            className=" m-2 px-1.5 bg-green-100 border border-solid border-green-500 rounded-sm "
             onClick={() => {
               const filteredList = listOfRestaurant.filter(
-                (res) => res.info.sla.deliveryTime > 35
+                (res) => res.info.avgRating > 4.2
               );
               setListOfRestaurant(filteredList);
               // console.log("yes");
             }}
           >
             Top Rated Resturants
+          </button>
+        </div>
+        <div>
+          <button className="search_box search flex items-center">
+            <label>User Name: </label>
+            <input
+              className="border border-black "
+              value={loggedInUser}
+              onClick={(e) => setUserName(e.target.value)}
+            />
           </button>
         </div>
       </div>
