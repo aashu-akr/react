@@ -13,8 +13,6 @@ const Header = () => {
 
   const { loggedInUser } = useContext(UserContext);
 
-  // console.log(loggedInUser);
-
   return (
     <div className="flex justify-between shadow-md mb-2 font-normal ">
       <div className="logo-container">
@@ -39,7 +37,7 @@ const Header = () => {
             <Link to="/grocery"> Grocery</Link>
           </li>
           <li className="px-4">
-            <Link to="/🛒"> 🛒</Link>
+            <Link to="/🛒"> 🛒 (0)</Link>
           </li>
 
           <button
