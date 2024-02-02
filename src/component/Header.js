@@ -13,7 +13,7 @@ const Header = () => {
 
   const { loggedInUser } = useContext(UserContext);
 
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
 
   return (
     <div className="flex justify-between shadow-md mb-2 font-normal ">
