@@ -7,7 +7,7 @@ const cartSlice = createSlice({
   initialState: {
     //inital value of slice
     //this is state
-    items: [],
+    items: ["burger", "sandwich", "noodles"],
   },
   reducers: {
     //some reducers which modify the state
