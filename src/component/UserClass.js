@@ -35,8 +35,9 @@ class UserClass extends React.Component {
     const { name, location, company, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
-        <h2>Count : {this.state.count}</h2>
+        <h1 className="m-2 p-2 text-"> Count : {this.state.count}</h1>
         <button
+          className="p-2 m-2 border border-solid border-black "
           onClick={() => {
             this.setState({
               count: this.state.count + 1,
@@ -46,6 +47,7 @@ class UserClass extends React.Component {
           Count Increment
         </button>
         <button
+          className="p-2 m-2 border border-solid border-black"
           onClick={() => {
             this.setState({
               count: this.state.count - 1,
@@ -55,6 +57,7 @@ class UserClass extends React.Component {
           Count Decrement
         </button>
         <button
+          className="p-2 m-2 border border-solid border-black"
           onClick={() => {
             this.setState({
               count: 0,
@@ -63,10 +66,10 @@ class UserClass extends React.Component {
         >
           Reset
         </button>
-        <img src={avatar_url}></img>
-        <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
-        <h4>Company: {company}</h4>
+        {/* <img src={avatar_url}></img> */}
+        <h2 className="py-2">Name: {name}</h2>
+        <h3 className="py-2">Location: {location}</h3>
+        <h4 className="py-2">Company: {company}</h4>
       </div>
     );
   }
