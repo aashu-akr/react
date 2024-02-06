@@ -67,3 +67,18 @@ _/
 -slice(cartSlice)
 -dispatch(action)
 -selector
+
+==========================================
+
+# Types of Testing:
+
+- Unit Testing
+- Integrated Testing
+- End to End Testing
+
+# Setting up Testing in our app:
+
+- Install React Testing Library
+- Installed Jest
+- Installed Babel dependencies
+- Configured babel.config.js file
