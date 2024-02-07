@@ -82,3 +82,6 @@ _/
 - Installed Jest
 - Installed Babel dependencies
 - Configured babel.config.js file
+- Configure parcel config file to disable feault bable transpilation
+- Jest - npx jest --init
+- install JSDom library
