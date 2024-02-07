@@ -87,3 +87,4 @@ _/
 - install JSDom library
 - install @babel/preset-react - to make JSX work in test cases
 - include @babel/preset-react inside my babel-config file
+- install @testing-library/jest-dom
