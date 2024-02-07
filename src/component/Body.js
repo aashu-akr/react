@@ -48,9 +48,10 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="flex mt-5 mb-5">
-        <div className="search mt-7">
+        <div className="search ">
           <input
             type="text"
+            placeholder="Type..."
             className=" ml-4 border border-solid border-black"
             value={searchText}
             onChange={(e) => {
@@ -87,10 +88,11 @@ const Body = () => {
           </button>
         </div>
         <div>
-          <button className="search_box search flex items-center">
+          <button className="search_box search flex items-center mt-2">
             <label>User Name: </label>
             <input
-              className="border border-black "
+              className="border border-black"
+              placeholder="Name"
               value={loggedInUser}
               onClick={(e) => setUserName(e.target.value)}
             />
