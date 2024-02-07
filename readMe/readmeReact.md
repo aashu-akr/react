@@ -85,3 +85,5 @@ _/
 - Configure parcel config file to disable feault bable transpilation
 - Jest - npx jest --init
 - install JSDom library
+- install @babel/preset-react - to make JSX work in test cases
+- include @babel/preset-react inside my babel-config file
